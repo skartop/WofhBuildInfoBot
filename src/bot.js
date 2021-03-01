@@ -1,4 +1,4 @@
-const config = require("./config.json");
+const config = require("../config.json");
 const messageHandler = require("./messageHandler.js")
 const discord = require("discord.js");
 const client = new discord.Client();

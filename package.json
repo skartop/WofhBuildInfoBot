@@ -1,0 +1,17 @@
+{
+  "name": "buildinfobot",
+  "version": "1.0.0",
+  "description": "Wofh bot for easy building cost calculation",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wofh"
+  ],
+  "author": "Stepan Lohinov",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}

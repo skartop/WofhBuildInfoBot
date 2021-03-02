@@ -1,4 +1,5 @@
 const buildingData = require("./BuildingData.json");
+const inputCommands = require("./language/input.js");
 
 function isInt(str) {
     return !isNaN(str) && Number.isInteger(parseFloat(str));
@@ -15,21 +16,18 @@ function parseLevels(text) {
     .replace(/\s+/g, ' ')
     .split(' ')
     .filter(isInt)
-    .filter( l => (l > 0 && l < 21)) || [])
+    .filter(l => (l > 0 && l < 21)) || [])
     .sort((a, b) => a - b)
     .map(parseFloat);
 }
 
 function parseCommand(text) {
-    if (["rebuild", "перестроисть"].find(w => text.includes(w)))
-        return "rebuild";
-    if (["build", "построить", "строить"].find(w => text.includes(w)))
-        return "build";
-    if (["upgrade", "улучшить"].find(w => text.includes(w)))
-        return "upgrade";
-    if (["help", "помощь"].find(w => text.includes(w)))
-        return "help";
-    return undefined;
+    let r = Object.values(inputCommands).filter(command =>
+        command.find(w => text.includes(w))
+    );
+    if (r.length == 0)
+        return undefined;
+    return r[0][0];
 }
 
 function parseBuildings(text, language) {

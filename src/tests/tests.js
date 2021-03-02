@@ -1,4 +1,4 @@
-const messageHandler = require("./messageHandler.js")
+const messageHandler = require("../messageHandler.js")
 
 function check() {
     if (!arguments && arguments.length < 2) {

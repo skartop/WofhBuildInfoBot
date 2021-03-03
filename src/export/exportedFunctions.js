@@ -16,3 +16,7 @@ module.exports.getCostLevel = function(level, cost) {
 	}
 	return result;
 };
+
+module.exports.getTime = function(level, buildtime) {
+	return oddFunc(buildtime, level) * 3600;
+};

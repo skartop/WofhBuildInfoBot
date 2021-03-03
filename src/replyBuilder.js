@@ -7,14 +7,16 @@ module.exports = {
         return util.format(_T_["build cost"][data.language],
                 data.building.name[data.language],
                 data.levels[0])
-            + CostToString(data.cost, data.language);
+            + CostToString(data.cost, data.language)
+            + TimeToString(data);
     },
     upgrade: function(data) {
         return util.format(_T_["upgrade cost"][data.language],
                 data.building.name[data.language],
                 data.levels[0],
                 data.levels[1])
-            + CostToString(data.cost, data.language);
+            + CostToString(data.cost, data.language)
+            + TimeToString(data);
     },
     help: function(data) {
         if (!data.tip) {
@@ -27,7 +29,8 @@ module.exports = {
                 data.building.name[data.language],
                 data.levels[0],
                 data.target.name[data.language])
-            + CostToString(data.cost, data.language);
+            + CostToString(data.cost, data.language)
+            + TimeToString(data);
     },
     ignore: function(data) {
         return undefined;
@@ -42,4 +45,15 @@ function CostToString(cost, language) {
         }
     }
     return reply;
+}
+
+function TimeToString(data) {
+    if (!data.isTime)
+        return "";
+    const hours = Math.trunc(data.time / 60 / 60);
+    let minutes = Math.trunc(data.time / 60 % 60);
+    if (minutes < 10) minutes = "0" + minutes;
+    let seconds = Math.trunc(data.time % 60 % 60);
+    if (seconds < 10) seconds = "0" + seconds;
+    return "  " + _T_["Time"][data.language] + " " + hours + ":" + minutes + ":" + seconds + "\n";
 }

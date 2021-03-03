@@ -22,7 +22,7 @@ function parseLevels(text) {
 }
 
 function parseCommand(text) {
-    let r = Object.values(inputCommands).filter(command =>
+    let r = Object.values(inputCommands.commands).filter(command =>
         command.find(w => text.includes(w))
     );
     if (r.length == 0)
@@ -41,12 +41,19 @@ function parseBuildings(text, language) {
         return buildings.sort((a, b) => (a.name[language].length > b.name[language].length ? a : b))[0];
 }
 
+function parseSubcommand(text, command) {
+    return inputCommands.subcommands[command]
+        .filter(c =>  text.includes(c)
+        ).length > 0;
+}
+
 module.exports = function(message) {
     const language = getTextLanguage(message);
     return {
         command: parseCommand(message),
         levels: parseLevels(message),
         language: language,
-        building: parseBuildings(message, language)
+        building: parseBuildings(message, language),
+        isTime: parseSubcommand(message, "time")
     };
 }

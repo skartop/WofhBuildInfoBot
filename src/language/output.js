@@ -35,7 +35,8 @@ module.exports = {
         + "> `[b17] 11 15 @BuildInfoBot`\n" 
         + " rebuild - shows rebuilding cost from specified level to next tier\n"
         + " Examples:\n"
-        + "> `!bi rebuild hut 11`\n",
+        + "> `!bi rebuild hut 11`\n"
+        + "Add `time!` at any place of command to calculate building time.",
         ru: "Кому лень вникать - попробуйте напиши в чате:\n"
         + "> `землянка 11`\n"
         + "> `землянка 11 13`\n"
@@ -59,6 +60,7 @@ module.exports = {
         + " перестроить - посчитать цену перестройки с указаного уровня\n"
         + " Пример:\n"
         + "> `!bi перестроить хижина 11`\n\n"
+        + "Добавьте `время!` к команде что б посчитать время строительства"
     },
     "no building selected" : {
         en: "Can't understand what building selected.",
@@ -79,5 +81,9 @@ module.exports = {
     "Can't rebuild such building" : {
         en: "Can't rebuild this building",
         ru: "Нельзя перестроить это строение"
+    },
+    "Time": {
+        en: "Time:",
+        ru: "Время:"
     }
 }

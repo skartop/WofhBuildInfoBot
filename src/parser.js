@@ -1,4 +1,4 @@
-const buildingData = require("./BuildingData.json");
+const buildingData = require("./export/BuildingData.json");
 const inputCommands = require("./language/input.js");
 
 function isInt(str) {

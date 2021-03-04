@@ -6,5 +6,6 @@ module.exports.commands = {
 };
 
 module.exports.subcommands = {
-    "time": ["time!", "время!"]
+    "time": ["time!", "время!"],
+    "non-stop": ["non-stop!", "нонстоп!"]
 };

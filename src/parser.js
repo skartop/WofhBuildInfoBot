@@ -54,6 +54,7 @@ module.exports = function(message) {
         levels: parseLevels(message),
         language: language,
         building: parseBuildings(message, language),
-        isTime: parseSubcommand(message, "time")
+        isTime: parseSubcommand(message, "time"),
+        isNonStop: parseSubcommand(message, "non-stop"),
     };
 }

@@ -7,7 +7,7 @@ module.exports = {
         return util.format(_T_["build cost"][data.language],
                 data.building.name[data.language],
                 data.levels[0])
-            + CostToString(data.cost, data.language)
+            + CostToString(data)
             + TimeToString(data);
     },
     upgrade: function(data) {
@@ -15,7 +15,7 @@ module.exports = {
                 data.building.name[data.language],
                 data.levels[0],
                 data.levels[1])
-            + CostToString(data.cost, data.language)
+            + CostToString(data)
             + TimeToString(data);
     },
     help: function(data) {
@@ -29,7 +29,7 @@ module.exports = {
                 data.building.name[data.language],
                 data.levels[0],
                 data.target.name[data.language])
-            + CostToString(data.cost, data.language)
+            + CostToString(data)
             + TimeToString(data);
     },
     ignore: function(data) {
@@ -37,11 +37,20 @@ module.exports = {
     }
 };
 
-function CostToString(cost, language) {
+function CostToString(data) {
+    const cost = data.cost;
+    const language = data.language;
+    const nonstopHours = data.nonstopTime / 60 / 60;
+    if (nonstopHours < 0.000001)
+        data.isNonStop = false;
+
     let reply = "";
     for (let i = 0; i < Resources.length; i++) {
         if (cost[i] > 0) {
-            reply += "  " + Resources[i][language] + ": " + cost[i] + "\n";
+            reply += "  " + Resources[i][language] + ": " + cost[i];
+            if (data.isNonStop)
+                reply += "  (" + Math.round(cost[i] / nonstopHours) + " " + _T_["per hour"][language] + ")";
+            reply += "\n";
         }
     }
     return reply;

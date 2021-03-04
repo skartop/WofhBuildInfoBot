@@ -6,11 +6,15 @@ module.exports = {
     build: (data) => {
         data.cost = CalculateCost(data.building, 1, data.levels[0]);
         data.time = CalculateTime(data.building, 1, data.levels[0]);
+        if (data.levels[0] > 2)
+            data.nonstopTime = CalculateTime(data.building, 1, data.levels[0] - 1);
         return data;
     },
     upgrade: (data) => {
         data.cost = CalculateCost(data.building, data.levels[0] + 1, data.levels[1]);
         data.time = CalculateTime(data.building, data.levels[0] + 1, data.levels[1]);
+        if (data.levels[1] - data.levels[0] > 2)
+            data.nonstopTime = CalculateTime(data.building, data.levels[0] + 1, data.levels[1] - 1);
         return data;
     },
     help: (data) => data,

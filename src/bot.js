@@ -6,13 +6,20 @@ const client = new discord.Client();
 function isNeedToReply(message) {
     if (message.author.bot)
         return false;
-    if (message.content.includes("@here") || message.content.includes("@everyone"))
-        return false;
 
+    // Any message started with "!bi"
     if (message.content.startsWith("!bi"))
         return true;
-    if (message.mentions.has(client.user.id))
+
+    // Mentioned directly
+    if ((message.mentions.has(client.user.id) || (message.content.includes("@BuildInfoBot")))
+        && !(message.content.includes("@here") || message.content.includes("@everyone")))
         return true;
+
+    // DM message
+    if (message.guild == null)
+        return true;
+
     return false;
 }
 

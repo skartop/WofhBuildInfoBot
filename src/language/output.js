@@ -38,7 +38,7 @@ module.exports = {
         + "Subcommands. Use them at any place o command:\n"
         + " `time!` - calculate building time.\n"
         + " `non-stop!` - calculate streams for non-stop building.\n"
-        + " `separator!` - add thousand separators for numbers.\n"
+        + " `separator!` - add thousands separator for numbers.\n"
         + " `price!` - (experimental) calculate resources price.\n"
         + " `all!` - turn on all subcommands.\n"
         ,

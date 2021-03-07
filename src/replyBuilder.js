@@ -37,6 +37,27 @@ module.exports = {
     }
 };
 
+function Separation(number, sepparator) {
+    if (!sepparator || sepparator == "")
+        return number;
+
+    number = number.toString();
+    if (number.length < 3)
+        return number;
+
+    let result = "";
+    let some = number.length % 3;
+    if (some == 0)
+        some = 3;
+    result += number.slice(0, some);
+    number = number.slice(some);
+    while (number.length > 0) {
+        result += sepparator + number.slice(0, 3);
+        number = number.slice(3);
+    }
+    return result;
+}
+
 function CostToString(data) {
     const cost = data.cost;
     const language = data.language;
@@ -47,9 +68,9 @@ function CostToString(data) {
     let reply = "";
     for (let i = 0; i < Resources.length; i++) {
         if (cost[i] > 0) {
-            reply += "  " + Resources[i][language] + ": " + cost[i];
+            reply += "  " + Resources[i][language] + ": " + Separation(cost[i], data.isSeparator ? " " : "");
             if (data.isNonStop)
-                reply += "  (" + Math.round(cost[i] / nonstopHours) + " " + _T_["per hour"][language] + ")";
+                reply += "  (" + Separation(Math.round(cost[i] / nonstopHours), data.isSeparator ? " " : "")  + " " + _T_["per hour"][language] + ")";
             reply += "\n";
         }
     }

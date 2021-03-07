@@ -35,8 +35,11 @@ module.exports = {
         + " rebuild - shows rebuilding cost from specified level to next tier\n"
         + " Examples:\n"
         + "> `!bi rebuild hut 11`\n"
-        + "Add `time!` at any place of command to calculate building time.\n"
-        + "Add `non-stop!` at any place of command to calculate streams for non-stop building.",
+        + "Subcommands. Use them at any place o command:\n"
+        + " `time!` - calculate building time.\n"
+        + " `non-stop!` - calculate streams for non-stop building.\n"
+        + " `separator!` - add thousand separators for numbers.\n",
+
         ru: "Кому лень вникать - попробуйте напиши в чате:\n"
         + "> `землянка 11`\n"
         + "> `землянка 11 13`\n"
@@ -59,8 +62,10 @@ module.exports = {
         + " перестроить - посчитать цену перестройки с указаного уровня\n"
         + " Пример:\n"
         + "> `!bi перестроить хижина 11`\n"
-        + "Добавьте `время!` к команде что б посчитать время строительства.\n"
-        + "Добавьте `нонстоп!` к команде что б посчитать потоки для безпрерывной стройки."
+        + "Доп. команды. Пишите в любом месте команды:\n"
+        + " `время!` - расчитать время строительства.\n"
+        + " `нонстоп!` - посчитать потоки для безпрерывной стройки.\n"
+        + " `разделитель!` - разделить тысячи пробелом.\n"
     },
     "no building selected" : {
         en: "Can't understand what building selected.",

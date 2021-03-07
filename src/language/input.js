@@ -7,5 +7,6 @@ module.exports.commands = {
 
 module.exports.subcommands = {
     "time": ["time!", "время!"],
-    "non-stop": ["non-stop!", "нонстоп!"]
+    "non-stop": ["non-stop!", "нонстоп!"],
+    "separator": ["separator!", "разделитель!"]
 };

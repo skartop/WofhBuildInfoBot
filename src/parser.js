@@ -56,5 +56,6 @@ module.exports = function(message) {
         building: parseBuildings(message, language),
         isTime: parseSubcommand(message, "time"),
         isNonStop: parseSubcommand(message, "non-stop"),
+        isSeparator: parseSubcommand(message, "separator"),
     };
 }

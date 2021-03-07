@@ -38,7 +38,9 @@ module.exports = {
         + "Subcommands. Use them at any place o command:\n"
         + " `time!` - calculate building time.\n"
         + " `non-stop!` - calculate streams for non-stop building.\n"
-        + " `separator!` - add thousand separators for numbers.\n",
+        + " `separator!` - add thousand separators for numbers.\n"
+        + " `all!` - turn on all subcommands.\n"
+        ,
 
         ru: "Кому лень вникать - попробуйте напиши в чате:\n"
         + "> `землянка 11`\n"
@@ -66,6 +68,7 @@ module.exports = {
         + " `время!` - расчитать время строительства.\n"
         + " `нонстоп!` - посчитать потоки для безпрерывной стройки.\n"
         + " `разделитель!` - разделить тысячи пробелом.\n"
+        + " `всё!` - применить все доп. команды.\n"
     },
     "no building selected" : {
         en: "Can't understand what building selected.",

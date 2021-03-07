@@ -49,13 +49,14 @@ function parseSubcommand(text, command) {
 
 module.exports = function(message) {
     const language = getTextLanguage(message);
+    let all = parseSubcommand(message, "all");
     return {
         command: parseCommand(message),
         levels: parseLevels(message),
         language: language,
         building: parseBuildings(message, language),
-        isTime: parseSubcommand(message, "time"),
-        isNonStop: parseSubcommand(message, "non-stop"),
-        isSeparator: parseSubcommand(message, "separator"),
+        isTime: parseSubcommand(message, "time") || all,
+        isNonStop: parseSubcommand(message, "non-stop") || all,
+        isSeparator: parseSubcommand(message, "separator") || all,
     };
 }

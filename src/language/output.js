@@ -39,6 +39,7 @@ module.exports = {
         + " `time!` - calculate building time.\n"
         + " `non-stop!` - calculate streams for non-stop building.\n"
         + " `separator!` - add thousand separators for numbers.\n"
+        + " `price!` - (experimental) calculate resources price.\n"
         + " `all!` - turn on all subcommands.\n"
         ,
 
@@ -68,6 +69,7 @@ module.exports = {
         + " `время!` - расчитать время строительства.\n"
         + " `нонстоп!` - посчитать потоки для безпрерывной стройки.\n"
         + " `разделитель!` - разделить тысячи пробелом.\n"
+        + " `цена!` - (експериментальная) посчитать стоимость ресурсов.\n"
         + " `всё!` - применить все доп. команды.\n"
     },
     "no building selected" : {
@@ -97,5 +99,9 @@ module.exports = {
     "per hour": {
         en: "per hour",
         ru: "в час"
+    },
+    "Price": {
+        en: "Price",
+        ru: "Цена"
     }
 }

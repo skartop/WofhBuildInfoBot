@@ -8,7 +8,8 @@ module.exports = {
                 data.building.name[data.language],
                 data.levels[0])
             + CostToString(data)
-            + TimeToString(data);
+            + TimeToString(data)
+            + PriceToString(data);
     },
     upgrade: function(data) {
         return util.format(_T_["upgrade cost"][data.language],
@@ -16,7 +17,8 @@ module.exports = {
                 data.levels[0],
                 data.levels[1])
             + CostToString(data)
-            + TimeToString(data);
+            + TimeToString(data)
+            + PriceToString(data);
     },
     help: function(data) {
         if (!data.tip) {
@@ -30,12 +32,19 @@ module.exports = {
                 data.levels[0],
                 data.target.name[data.language])
             + CostToString(data)
-            + TimeToString(data);
+            + TimeToString(data)
+            + PriceToString(data);
     },
     ignore: function(data) {
         return undefined;
     }
 };
+
+function PriceToString(data) {
+    if (!data.isPrice)
+        return "";
+    return "  " + _T_["Price"][data.language] + ": " + Separation(Math.round(data.price), data.isSeparator ? " " : "") + "\n";
+}
 
 function Separation(number, sepparator) {
     if (!sepparator || sepparator == "")

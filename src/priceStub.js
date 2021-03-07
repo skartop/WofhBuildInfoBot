@@ -1,0 +1,23 @@
+module.exports = {
+    'Food': 0.1,
+    'Wood': 0.1,
+    'Metal': 0.25,
+    'Fuel': 0.4,
+    'Granite': 0.25,
+    'Pack animals': 0.2,
+    'Sulfur': 0.5,
+    'Aluminum': 2.0,
+    'Uranium': 1000.0,
+    'Fruit': 0.1,
+    'Corn': 0.15,
+    'Wheat': 0.15,
+    'Rice': 0.15,
+    'Fish': 0.1,
+    'Meat': 0.1,
+    'Wine': 0.2,
+    'Jewels': 0.22,
+    'Clothes': 0.2,
+    'Music': 0.5,
+    'Movies': 0.7,
+    'Books': 0.7
+}

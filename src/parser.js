@@ -58,5 +58,6 @@ module.exports = function(message) {
         isTime: parseSubcommand(message, "time") || all,
         isNonStop: parseSubcommand(message, "non-stop") || all,
         isSeparator: parseSubcommand(message, "separator") || all,
+        isPrice: parseSubcommand(message, "price") || all,
     };
 }

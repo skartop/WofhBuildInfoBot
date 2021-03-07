@@ -77,7 +77,7 @@ function CostToString(data) {
     let reply = "";
     for (let i = 0; i < Resources.length; i++) {
         if (cost[i] > 0) {
-            reply += "  " + Resources[i][language] + ": " + Separation(cost[i], data.isSeparator ? " " : "");
+            reply += "> " + Resources[i][language] + ": " + Separation(cost[i], data.isSeparator ? " " : "");
             if (data.isNonStop)
                 reply += "  (" + Separation(Math.round(cost[i] / nonstopHours), data.isSeparator ? " " : "")  + " " + _T_["per hour"][language] + ")";
             reply += "\n";

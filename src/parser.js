@@ -6,9 +6,9 @@ function isInt(str) {
 }
 
 function getTextLanguage(text) {
-    if (((text || '').match(/[a-z]/gi) || []).length < ((text || '').match(/[абвгдеёжзийклмнопрстуфхцчшщъыьэюя]/gi) || []).length) 
-        return "ru";
-    return "en";
+    if (((text || '').match(/[a-z]/gi) || []).length > ((text || '').match(/[абвгдеёжзийклмнопрстуфхцчшщъыьэюя]/gi) || []).length) 
+        return "en";
+    return "ru";
 }
 
 function parseLevels(text) {

@@ -3,7 +3,7 @@ const handle = require("./handler.js");
 const postParser = require("./postParsed.js");
 const buildReply = require("./replyBuilder.js");
 
-const debug = false;
+const debug = true;
 module.exports = function(message) {
     if (debug) console.log("message: " + message);
     const rawParsed = parser(message);

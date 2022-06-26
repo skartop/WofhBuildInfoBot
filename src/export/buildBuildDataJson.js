@@ -23,7 +23,7 @@ function BuildInfoAppendRuInfo(a) {
         console.log("Switch to ru language!");
         return;
     }
-    if (!(a[i] || a[i].name || a[i].name.ru || a[i].name.ru == "Shrine")) {
+    if (!(a[0] || a[0].name || a[0].name.ru || a[0].name.ru == "Shrine")) {
         console.log("run BuildBuildInfo() before this!");
         return;
     }

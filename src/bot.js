@@ -1,14 +1,15 @@
 const config = require("../config.json");
 const messageHandler = require("./messageHandler.js")
 const discord = require("discord.js");
+const inputCommands = require("./language/input.js")
 const client = new discord.Client();
 
 function isNeedToReply(message) {
     if (message.author.bot)
         return false;
 
-    // Any message started with "!bi"
-    if (message.content.startsWith("!bi"))
+    // Any message started with botPrefix
+    if (message.content.startsWith(inputCommands.botPrefix[0]) || message.content.startsWith(inputCommands.botPrefix[1]))
         return true;
 
     // Mentioned directly

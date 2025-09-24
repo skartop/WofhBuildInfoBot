@@ -1,5 +1,5 @@
-util = require('util');
-_T_ = require("./language/output.js");
+const util = require('util');
+const _T_ = require("./language/output.js");
 const Resources = require("./Resources.js");
 
 module.exports = {

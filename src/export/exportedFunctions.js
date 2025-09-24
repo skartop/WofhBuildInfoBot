@@ -1,5 +1,5 @@
 //РАСЧЁТ ПАРАМЕТРОВ
-oddFunc = function(arr, level){
+const oddFunc = function(arr, level){
     if( !arr )
         return 0;
     var res = arr[1] + arr[2] * Math.pow(level, arr[3]);

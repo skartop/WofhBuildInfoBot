@@ -40,9 +40,9 @@ module.exports = {
 
 function CalculatePrice(cost) {
     let result = 0;
-    for (i = 0; i < cost.length; i++) {
+    for (let i = 0; i < cost.length; i++) {
         if (cost[i] != 0) {
-            const price = Prices[Resources[i].en];
+            const price = Prices[Resources[i].en] || 0;
             result += price * cost[i];
         }
     }
@@ -71,4 +71,3 @@ function CalculateTime(target, startLvl, finishLvl) {
         time += Math.round(Exported.getTime(level, target.buildtime));
     return time;
 }
-

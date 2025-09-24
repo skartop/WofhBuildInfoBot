@@ -36,9 +36,10 @@ function parseBuildings(text, language) {
         .filter(bd => ((lowercased.includes(bd.name.en.toLowerCase())) 
             || (lowercased.includes(bd.name.ru.toLowerCase()))
             || (lowercased.includes("[b" + bd.id + "]"))));
-        if (!buildings)
+        if (!buildings || buildings.length === 0)
             return;
-        return buildings.sort((a, b) => (a.name[language].length > b.name[language].length ? a : b))[0];
+        return buildings
+            .sort((a, b) => a.name[language].length - b.name[language].length)[0];
 }
 
 function parseSubcommand(text, command) {
